@@ -52,10 +52,15 @@ const signin = async (user) => {
     const user = JSON.parse(atob(token.split('.')[1]));
     return user;
   }
+
+  const signout = () => {
+    localStorage.removeItem('token');
+  }
   
 
 export {
   signup, 
   signin,
   getUser,
+  signout,
 };
